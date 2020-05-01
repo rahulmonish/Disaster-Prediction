@@ -27,12 +27,12 @@ def preprocess_data(sentences):
 
 df= pd.read_csv(r'train.csv')
 
-df.dropna(subset=['keyword'], inplace=True)
+#df.dropna(subset=['keyword'], inplace=True)
 
 
 sentences= preprocess_data(df['text'])
-from sklearn.feature_extraction.text import CountVectorizer
-cv= CountVectorizer()
+from sklearn.feature_extraction.text import TfidfVectorizer
+cv= TfidfVectorizer()
 X= cv.fit_transform(sentences).toarray()
 y= df['target']
 
