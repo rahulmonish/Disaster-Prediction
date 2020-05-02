@@ -109,16 +109,14 @@ new_df= predict_keyword(new_df)
 
 
 
-# =============================================================================
-# model= xg_reg = xgb.XGBClassifier(subsample= 1.0,
-#                                  min_child_weight= 10,
-#                                  learning_rate= 0.1,
-#                                  gamma= 1.5,
-#                                  booster= 'gbtree',
-#                                  colsample_bytree= 1.0)
-# =============================================================================
+model= xg_reg = xgb.XGBClassifier(subsample= 1.0,
+                                 min_child_weight= 10,
+                                 learning_rate= 0.1,
+                                 gamma= 1.5,
+                                 booster= 'gbtree',
+                                 colsample_bytree= 1.0)
 #model= LogisticRegression()
-model= GaussianNB()
+#model= GaussianNB()
 #y= new_df['target']
 le= LabelEncoder()
 new_df['keyword']= le.fit_transform(new_df['keyword'])
