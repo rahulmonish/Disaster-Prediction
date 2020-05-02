@@ -39,7 +39,8 @@ y= df['target']
 
 
 
-x_train, x_test, y_train, y_test= train_test_split(X, y, test_size= .2)
+
+#x_train, x_test, y_train, y_test= train_test_split(X, y, test_size= .2)
 
 
 from sklearn.naive_bayes import GaussianNB
@@ -50,10 +51,10 @@ model= xg_reg = xgb.XGBClassifier(subsample= 1.0,
                                  gamma= 1.5,
                                  booster= 'gbtree',
                                  colsample_bytree= 1.0)
-model= GaussianNB()
-model.fit(x_train, y_train)
+#model= GaussianNB()
+model.fit(X, y)
 
-model.score(x_test, y_test)
+#model.score(x_test, y_test)
 
 
 
